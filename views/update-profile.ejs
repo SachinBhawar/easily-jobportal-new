@@ -1,0 +1,55 @@
+<!--  -->
+<% if(message){ %>
+<div class="registration">
+  <h1 class="fail"><%= message %></h1>
+</div>
+<% } %>
+<div class="postJob-form-container">
+  <!--  -->
+  <div class="title"><%= userName %>, Please update your profile to apply to jobs..</div>
+
+  <form action="/update-profile" method="post" enctype="multipart/form-data">
+    <input class="input" type="hidden" name="name" value="<%= userName %>" />
+    <input class="input" type="hidden" name="email" value="<%= userEmail %>" />
+    <div class="user-details">
+      <div class="input-box-post-job">
+        <span class="details"> Phone Number</span>
+        <input class="input" type="text" name="phone" required />
+      </div>
+
+      <div class="input-box-post-job">
+        <span class="details"> Gender </span>
+        <select class="input" name="gender" required>
+          <option selected disabled>select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="input-box-post-job">
+        <span class="details"> Education </span>
+        <input class="input" type="text" name="education" required />
+      </div>
+
+      <div class="input-box-post-job">
+        <span class="details"> Experience (in Yrs) </span>
+        <input class="input" type="text" name="experience" required />
+      </div>
+
+      <div class="input-box-post-job">
+        <span class="details"> Skills</span>
+        <input class="input" type="text" placeholder="list skills saperated by comma" name="skills" required />
+      </div>
+
+      <div class="input-box-post-job">
+        <span class="details"> Upload Resume</span>
+        <input id="resume" class="input" type="file" name="resume" required />
+        <label class="resume-label" for="resume">Upload Resume</label>
+      </div>
+
+      <button class="submit-btn" type="submit">Update Profile</button>
+    </div>
+  </form>
+</div>
+<!--  -->

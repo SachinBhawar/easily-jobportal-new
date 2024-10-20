@@ -1,0 +1,112 @@
+<!--  -->
+<% if(message){ %>
+<div class="registration">
+    <h1 class="fail"><%= message %></h1>
+</div>
+<% } %>
+<div class="postJob-form-container">
+    <!--  -->
+    <div class="title">Post a New Job</div>
+
+    <form action="/create-new-job" method="post">
+        <div class="user-details">
+            <div class="input-box-post-job">
+                <span class="details"> Company Name </span>
+                <input class="input" type="text" name="company" required />
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> Job Type Selection </span>
+                <select class="input" name="type" required>
+                    <option selected disabled>select Job Type</option>
+                    <option value="Tech">Tech</option>
+                    <option value="Non-Tech">Non-Tech</option>
+                </select>
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> Designation </span>
+                <select class="input" name="designation" class="details" required>
+                    <option selected disabled>Select Job Designation</option>
+                    <!-- Technical Roles -->
+                    <option value="HR">HR</option>
+                    <option value="SDE">SDE</option>
+                    <option value="DevOps">DevOps</option>
+                    <option value="MERN Developer">MERN Developer</option>
+                    <option value="Android Developer">Android Developer</option>
+                    <option value="Java Developer">Java Developer</option>
+                    <option value="Front-End Developer">Front-End Developer</option>
+                    <option value="Back-End Developer">Back-End Developer</option>
+                    <option value="Full-Stack Developer">Full-Stack Developer</option>
+                    <option value="Data Scientist">Data Scientist</option>
+                    <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+                    <option value="AI Engineer">AI Engineer</option>
+                    <option value="Cloud Architect">Cloud Architect</option>
+                    <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
+                    <option value="Blockchain Developer">Blockchain Developer</option>
+                    <option value="UI/UX Designer">UI/UX Designer</option>
+                    <option value="Database Administrator">Database Administrator</option>
+                    <option value="Network Engineer">Network Engineer</option>
+                    <option value="QA Engineer">QA Engineer</option>
+
+                    <!-- Non-Technical Roles -->
+                    <option value="Marketing Manager">Marketing Manager</option>
+                    <option value="Sales Executive">Sales Executive</option>
+                    <option value="Content Writer">Content Writer</option>
+                    <option value="Business Analyst">Business Analyst</option>
+                    <option value="Project Manager">Project Manager</option>
+                    <option value="Operations Manager">Operations Manager</option>
+                    <option value="Finance Manager">Finance Manager</option>
+                    <option value="Customer Support">Customer Support</option>
+                    <option value="Product Manager">Product Manager</option>
+                    <option value="Digital Marketing Specialist">Digital Marketing Specialist</option>
+                    <option value="Graphic Designer">Graphic Designer</option>
+                    <option value="Legal Advisor">Legal Advisor</option>
+                    <option value="Public Relations Manager">Public Relations Manager</option>
+                    <option value="Human Resources Specialist">Human Resources Specialist</option>
+                </select>
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> Salary </span>
+                <input class="input" type="text" name="salary" required />
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> Location </span>
+                <input class="input" type="text" name="location" required />
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> No Of vaccancies </span>
+                <input class="input" type="text" name="vacancies" required />
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> Experience Required </span>
+                <input class="input" type="text" name="experience" />
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> Skills required </span
+                ><span><small>(write skills saperated by comma)</small> </span>
+                <input
+                    class="input"
+                    type="text"
+                    placeholder="list skills saperated by comma"
+                    name="skills"
+                    required
+                />
+            </div>
+
+            <div class="desc-textarea">
+                <div class="details">Job Description</div>
+                <textarea class="input" type="text" name="description"></textarea>
+            </div>
+        </div>
+        <div>
+            <button class="submit-btn" type="submit">Post Job</button>
+        </div>
+    </form>
+</div>
+<!--  -->

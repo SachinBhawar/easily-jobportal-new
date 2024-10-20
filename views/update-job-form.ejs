@@ -1,0 +1,88 @@
+<!--  -->
+<% if(message){ %>
+<div class="registration">
+    <h1 class="fail"><%= message %></h1>
+</div>
+<% } %>
+
+<div class="postJob-form-container">
+    <!--  -->
+    <div class="title">Update Job</div>
+
+    <form action="/update-job" method="post">
+        <input class="hidden" type="text" name="_id" value="<%= job._id %>" />
+
+        <div class="user-details">
+            <div class="input-box-post-job">
+                <span class="details"> Company Name </span>
+                <input class="input" type="text" name="company" value="<%= job.company %>" required />
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> Job Type Selection </span>
+                <select class="input" name="type">
+                    <option value="" selected>select Job Type</option>
+                    <option value="Tech">Tech</option>
+                    <option value="Non-Tech">Non-Tech</option>
+                </select>
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> Designation </span>
+                <select class="input" name="designation" class="details" required>
+                    <option value="" selected>select job designation</option>
+                    <option value="HR">HR</option>
+                    <option value="SDE">SDE</option>
+                    <option value="DevOps">DevOps</option>
+                    <option value="MERN Developer">MERN Developer</option>
+                    <option value="Android Developer">Android Developer</option>
+                    <option value="JAVA Developer">JAVA Developer</option>
+                    <option value="Front-End Developer">Front-End Developer</option>
+                    <option value="Back-End Developer">Back-End Developer</option>
+                    <option value="Full-Stack Developer">Full-Stack Developer</option>
+                </select>
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> Salary </span>
+                <input class="input" type="text" name="salary" value="<%= job.salary %>" required />
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> Location </span>
+                <input class="input" type="text" name="location" value="<%= job.location %>" required />
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> No Of vaccancies </span>
+                <input class="input" type="text" name="vacancies" value="<%= job.vacancies %>" required />
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> Experience Required </span>
+                <input class="input" type="text" name="experience" value="<%= job.experience %>" />
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> Skills required </span>
+                <input
+                    class="input"
+                    type="text"
+                    placeholder="list skills saperated by comma"
+                    name="skills"
+                    value="<%= job.skills %>"
+                    required
+                />
+            </div>
+
+            <div class="desc-textarea">
+                <div class="details">Job Description</div>
+                <textarea class="input" type="text" name="description"><%= job.description %></textarea>
+            </div>
+        </div>
+        <div>
+            <a href="/update-job"><button class="submit-btn" type="submit">Update Job</button></a>
+        </div>
+    </form>
+</div>
+<!--  -->

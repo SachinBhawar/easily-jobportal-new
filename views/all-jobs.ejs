@@ -1,0 +1,129 @@
+<!--
+this view takes 
+allJObs =[array of jobs],
+message= "string"
+
+-->
+<% if(message){ %>
+<div class="registration">
+    <h1 class="fail"><%= message %></h1>
+</div>
+<% } %>
+
+<!-- job cards container -->
+<div id="cards-container">
+    <% allJobs.forEach(job => { %>
+    <div class="card">
+        <div class="actively-hiring">
+            <span>Actively hiring &#160; &#160;<i class="fa-solid fa-chart-line"></i></span>
+        </div>
+        <div class="company"><%= job.company %></div>
+        <div class="position"><span><%= job.type %> &#160;</span><span><%= job.designation %></span></div>
+        <span class="location"><i class="fa-solid fa-location-dot"></i> &#160; <%= job.location %></span>
+        <span class="salary"><i class="fa-solid fa-indian-rupee-sign"></i> &#160; <%= job.salary %></span>
+        <div class="skills">
+            <% if(job.skills && job.skills.length) { %> <% job.skills.forEach(skill => { %>
+            <span class="skill cursor-pointer"><%= skill %></span>
+            <% }) %> <% } %>
+        </div>
+        <div>
+            <button class="view-details-btn cursor-pointer" onclick="openModal(this)" name="view-details">
+                View Details
+            </button>
+
+            <% if(userName) { %> <% if(role === "jobseeker" || role === "JobSeeker") { %> <%
+            if(appliedJobList.includes(job._id)) { %>
+            <button class="view-details-btn cursor-pointer" style="background-color: violet">Applied</button>
+            <% } else { %> <% if(path === "/applied-jobs") { %>
+            <!-- Button to send an email -->
+            <a
+                href="/send-emailnotification/<%= job.recruiter_email %>"
+                onclick="return confirmSendEmail()"
+                style="color: white; text-decoration: none"
+            >
+                <button class="view-details-btn cursor-pointer">Send Email To Recruiter</button>
+            </a>
+            <% } else { %>
+            <!-- Button to apply -->
+            <a
+                href="/apply-job/<%= job._id %>"
+                onclick="return confirmApply()"
+                style="color: white; text-decoration: none"
+            >
+                <button class="view-details-btn cursor-pointer">Apply</button>
+            </a>
+            <% } %> <% } %> <% } else if(userEmail === job.recruiter_email) { %>
+            <!-- Buttons to update or delete job if the logged-in user is the recruiter -->
+            <a href="/update-job/<%= job._id %>" style="color: white; text-decoration: none">
+                <button class="view-details-btn cursor-pointer" style="background-color: green">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+            </a>
+            <a
+                href="/delete-job/<%= job._id %>"
+                onclick="return confirmDelete()"
+                style="color: white; text-decoration: none"
+            >
+                <button class="view-details-btn cursor-pointer" style="background-color: red">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </a>
+            <% } %> <% } %>
+        </div>
+    </div>
+
+    <div class="profile-popup">
+        <div class="profile-title"><%= job.company %> is hiring <%= job.designation %></div>
+        <form>
+            <div class="profile-details">
+                <div class="profile-input-box">
+                    <span class="profile">Designation</span>
+                    <input type="text" name="designation" value="<%= job.designation %>" disabled />
+                </div>
+                <div class="profile-input-box">
+                    <span class="profile">Job Type</span>
+                    <input type="text" name="type" value="<%= job.type %>" disabled />
+                </div>
+                <div class="profile-input-box">
+                    <span class="profile">Salary</span>
+                    <input type="text" name="salary" value="<%= job.salary %>" disabled />
+                </div>
+                <div class="profile-input-box">
+                    <span class="profile">Location</span>
+                    <input type="text" name="location" value="<%= job.location %>" disabled />
+                </div>
+                <div class="profile-input-box">
+                    <span class="profile">No of Vacancies</span>
+                    <input type="text" name="vacancies" value="<%= job.vacancies %>" disabled />
+                </div>
+
+                <%if(role =="Recruiter" && userEmail == job.recruiter_email) {%>
+
+                <div class="profile-input-box">
+                    <span class="profile">No of Applicants</span>
+                    <input
+                        type="text"
+                        name="applicants"
+                        style="background-color: white"
+                        name="<%= job.applicants.length %>"
+                        disabled
+                    />
+                </div>
+
+                <%}%>
+            </div>
+
+            <div class="gender-details">
+                <span class="gender-title">Description</span>
+                <div class="catagory"><%= job.description %></div>
+            </div>
+        </form>
+        <button class="ok-btn" onclick="closeModal(this)">Back</button>
+    </div>
+
+    <% }) %>
+</div>
+
+<div class="overlay hidden"></div>
+
+<!-- -->

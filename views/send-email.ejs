@@ -1,0 +1,50 @@
+<!--  -->
+<% if(message){ %>
+<div class="registration">
+    <h1 class="fail"><%= message %></h1>
+</div>
+<% } %>
+<div class="postJob-form-container">
+    <!--  -->
+    <div class="title">Sending Email to the</div>
+
+    <form action="/send-emailnotification/<%= recruiterEmail %>" method="post">
+        <div class="user-details">
+            <!-- <div class="input-box-post-job">
+                <span class="details"> Email Service</span>
+                <input
+                    class="input"
+                    type="text"
+                    name="service"
+                    placeholder="e.g. gmail"
+                    value="gmail"
+                    required
+                />
+            </div> -->
+
+            <div class="input-box-post-job">
+                <span class="details"> Sender Email </span>
+                <input class="input" type="text" name="senderEmail" value="<%= userEmail  %>" disabled />
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> Subject </span>
+                <input class="input" type="text" name="subject" placeholder="Subject" required />
+            </div>
+
+            <div class="input-box-post-job">
+                <span class="details"> Email Body</span>
+                <textarea
+                    class="input"
+                    type="text"
+                    placeholder="Message for Recruiter"
+                    name="body"
+                    required
+                ></textarea>
+            </div>
+
+            <button class="submit-btn" type="submit">Send Email Notification</button>
+        </div>
+    </form>
+</div>
+<!--  -->

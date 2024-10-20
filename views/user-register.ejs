@@ -1,0 +1,38 @@
+<!--  -->
+<% if(message){ %>
+<div class="registration">
+    <h1 class="fail"><%= message %></h1>
+</div>
+<% } %>
+<div class="registration-form-container" style="margin: 10px auto">
+    <!--  -->
+    <div class="title">Job Seaker Registration</div>
+
+    <form action="/user-register" method="post">
+        <input type="hidden" name="role" value="JobSeeker" />
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details"> Name </span>
+                <input class="input" type="text" name="name" required />
+            </div>
+
+            <div class="input-box">
+                <span class="details"> Email </span>
+                <input class="input" type="email" name="email" required />
+            </div>
+
+            <div class="input-box">
+                <span class="details"> Password </span>
+                <input class="input" type="password" name="password" required />
+            </div>
+        </div>
+        <div>
+            <button class="submit-btn" type="submit">Register</button>
+        </div>
+    </form>
+    <div class="login-btn-box">
+        <span class="details"> If already registered? </span>
+        <a href="/user-login"><button class="submit-btn">Login</button></a>
+    </div>
+</div>
+<!--  -->

@@ -1,0 +1,19 @@
+<% if(message){ %>
+<div class="registration">
+  <h1 class="fail"><%= message %></h1>
+</div>
+<% } %>
+
+<div id="front-page-body">
+  <div>
+    <h2>A Comprehensive platform for reliable</h2>
+    <h3>job opportunities and internships.</h3>
+    <p>Get Discovered. Get Hired.</p>
+  </div>
+  <% if(!userName){ %>
+  <div id="btn-container">
+    <a href="/user-register"><button class="submit-btn">I'm A Job-Seaker</button></a>
+    <a href="/recruiter-register"><button class="submit-btn">I'm A Recruiter</button></a>
+  </div>
+  <%}%>
+</div>
