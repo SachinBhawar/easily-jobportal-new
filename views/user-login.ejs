@@ -1,29 +1,29 @@
 <!--  -->
 <% if(message){ %>
 <div class="registration">
-  <h1 class="fail"><%= message %></h1>
+    <h1 class="fail"><%= message %></h1>
 </div>
 <% } %>
 <div class="registration-form-container">
-  <!--  -->
-  <div class="title">Login as Job-Seaker</div>
+    <!--  -->
+    <div class="title">Login as Job-Seeker</div>
 
-  <form action="/user-login" method="post">
-    <input type="hidden" name="role" value="jobseaker" />
-    <div class="user-details">
-      <div class="input-box">
-        <span class="details"> Email </span>
-        <input class="input" type="email" name="email" required />
-      </div>
+    <form action="/user-login" method="post">
+        <input type="hidden" name="role" value="jobseeker" />
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details"> Email </span>
+                <input class="input" type="email" name="email" required />
+            </div>
 
-      <div class="input-box">
-        <span class="details"> Password </span>
-        <input class="input" type="password" name="password" required />
-      </div>
-    </div>
-    <div>
-      <button class="submit-btn" type="submit">Login</button>
-    </div>
-  </form>
+            <div class="input-box">
+                <span class="details"> Password </span>
+                <input class="input" type="password" name="password" required />
+            </div>
+        </div>
+        <div>
+            <button class="submit-btn" type="submit">Login</button>
+        </div>
+    </form>
 </div>
 <!--  -->

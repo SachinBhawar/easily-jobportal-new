@@ -6,6 +6,7 @@
 * {
     padding: 0;
     margin: 0;
+    margin: 0;
 }
 
 body {
@@ -22,7 +23,7 @@ body {
 }
 
 /* navbar styles */
-#navbar {
+#navbar2 {
     background-color: rgba(0, 0, 0, 0.7);
     width: 100vw;
     height: 8vh;
@@ -100,7 +101,7 @@ body {
     color: white;
     font-weight: bolder;
 }
-.navbar #three-bars {
+.navbar2 #three-bars {
     display: none;
     left: 0;
 }
@@ -113,8 +114,46 @@ body {
     color: white;
     font-size: 12px;
 }
+
+#menu-modal {
+    position: absolute;
+    width: 300px;
+    display: block;
+    background-color: black;
+    top: 9%;
+}
+.menu-modal-hide {
+    display: none;
+}
+
+#menu-modal > ul {
+    width: 100%;
+    height: 100%;
+    color: white;
+    list-style: none;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#menu-modal > ul li {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#menu-modal > ul li:hover {
+    background-color: #9b59b6;
+}
+#menu-modal > ul li a {
+    text-decoration: none;
+    color: white;
+}
+
 @media (max-width: 900px) {
-    .navbar > ul li {
+    .navbar2 > ul li {
         margin: 15px 3px;
     }
 
@@ -156,6 +195,7 @@ body {
 }
 #front-page-body {
     width: 100%;
+    /* max-width: 300px; */
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -163,33 +203,32 @@ body {
     justify-content: center;
 }
 
-#front-page-body div {
-    width: 500px;
+#intro-text {
+    max-width: 500px;
     display: flex;
     flex-direction: column;
 }
-#front-page-body div h2 {
+#intro-text h2 {
     font-family: "Open Sans", sans-serif;
     font-size: 3rem;
     color: rgb(222, 34, 66);
-    margin-top: -4rem;
 }
-#front-page-body div h3 {
+#intro-text h3 {
     font-family: "Open Sans", sans-serif;
     font-size: 1.75rem;
     color: rgb(135, 23, 160);
 }
-#front-page-body div p {
+#intro-text p {
     font-family: "Open Sans", sans-serif;
     font-size: 1rem;
     color: rgb(103, 31, 119);
 }
-#front-page-body #btn-container {
-    /* width: 100%; */
+.btn-container {
     display: flex;
     flex-direction: row;
-    margin: 10px 0px;
-    /* gap: 2%; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .cursor-pointer:hover {
@@ -197,16 +236,16 @@ body {
 }
 
 @media (max-width: 768px) {
-    #front-page-body div {
+    #intro-text {
         width: 80vw;
     }
-    #front-page-body div h2 {
+    #intro-text h2 {
         font-size: 1.5rem;
     }
-    #front-page-body div h3 {
+    #intro-text h3 {
         font-size: 1.25rem;
     }
-    #front-page-body div p {
+    #intro-text p {
         font-size: 0.7rem;
     }
 }
@@ -237,7 +276,9 @@ body {
 /* recruiter/jobseaker register and login css styless */
 .registration-form-container {
     display: flex;
-    width: 500px;
+    max-width: 400px;
+    width: 95%;
+    margin: 0 auto;
     padding: 10px 20px;
     flex-direction: column;
     border-radius: 10px;
@@ -247,13 +288,11 @@ body {
 
 @media (max-width: 640px) {
     .registration-form-container {
-        width: 95vh;
-        margin-top: 2rem;
+        margin: 1rem;
     }
 }
 
 .registration-form-container .title {
-    width: 100%;
     /* height: 30px; */
     padding: 10px 10px;
     border-bottom: 1px solid gray;
@@ -265,6 +304,7 @@ body {
 .registration-form-container .user-details {
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;
@@ -275,17 +315,14 @@ body {
     box-sizing: border-box;
 }
 .registration-form-container .user-details .input-box {
-    width: 45%;
     display: flex;
-    flex: 1 1 250px;
+    width: 100%;
     flex-direction: column;
     box-sizing: border-box;
 }
 
 .registration-form-container .user-details .input-box-post-job {
-    width: 45%;
     display: flex;
-    flex: 0 1 240px;
     flex-direction: column;
     box-sizing: border-box;
 }
@@ -306,7 +343,7 @@ body {
     background-color: aquamarine;
 }
 .submit-btn {
-    width: 230px;
+    width: 150px;
     height: 40px;
     color: white;
     margin: 10px 15px 10px 0px;
@@ -360,6 +397,7 @@ body {
 .postJob-form-container form .user-details {
     width: 100%;
     display: flex;
+    flex: 0 0 140px;
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;

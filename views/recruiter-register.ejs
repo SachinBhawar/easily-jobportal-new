@@ -8,9 +8,9 @@
     <!--  -->
     <div class="title">Recruiter Registration</div>
 
-    <form action="/recruiter-register" method="post">
+    <form action="/recruiter-register" method="post" class="d-flex flex-column">
         <input type="hidden" name="role" value="Recruiter" />
-        <div class="user-details">
+        <div class="user-details d-flex flex-column w-100">
             <div class="input-box">
                 <span class="details"> Name </span>
                 <input class="input" type="text" name="name" required />
@@ -27,12 +27,12 @@
             </div>
         </div>
         <div>
-            <button class="submit-btn" type="submit">Register</button>
+            <button class="submit-btn p-2" type="submit">Register</button>
         </div>
     </form>
     <div class="login-btn-box">
         <span class="details"> If already registered? </span>
-        <a href="/recruiter-login"><button class="submit-btn">Login</button></a>
+        <a href="/recruiter-login"><button class="submit-btn p-2">Login</button></a>
     </div>
 </div>
 <!--  -->

@@ -104,3 +104,12 @@ dropdowns.forEach((dropdown) => {
         }
     });
 });
+
+document.getElementById("three-bars").addEventListener("click", function () {
+    const menuModal = document.getElementById("menu-modal");
+    if (modal.classList.contains("menu-modal-hide")) {
+        modal.classList.remove("menu-modal-hide");
+    } else {
+        modal.classList.add("menu-modal-hide");
+    }
+});
