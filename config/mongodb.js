@@ -11,15 +11,6 @@ const connectToMongoDB = async () => {
         useUnifiedTopology: true,
     });
     console.log("connected to mongoDB");
-    // const db = mongoose.connection;
-
-    // Listen for successful connection
-
-    // const collections = await db.db.listCollections().toArray();
-
-    // // Print the names of all collections in the database
-    // const collectionNames = collections.map((col) => col.name);
-    // console.log("Collections in the database:", collectionNames);
 };
 
 export default connectToMongoDB;

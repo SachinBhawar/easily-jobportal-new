@@ -18,7 +18,7 @@
         ></script>
 
         <!-- my own stylesheet -->
-        <link rel="stylesheet" href="/stylesheets/style.css" type="text/css" />
+        <link rel="stylesheet" href="/stylesheets/newStyle.css" type="text/css" />
         <link
             href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
             rel="stylesheet"
@@ -34,12 +34,14 @@
     </head>
     <body>
         <navbar class="navbar2 container-fluid" id="navbar2">
-            <div id="logo">easily</div>
+            <div id="logo">EASILY</div>
             <div class="container">
                 <ul id="menu" class="navbar-ul" style="color: white">
                     <li class="cursor-pointer">
                         <a href="/home">Home</a>
                     </li>
+
+                    <!-- this li will only visible if user is signed in -->
                     <% if(userName) { %>
                     <li class="cursor-pointer">
                         <a href="#">Welcome, <%= userName %>.</a>
@@ -57,6 +59,8 @@
                                 </li>
                             </ul>
                         </div>
+
+                        <!-- else this li will be visible -->
                         <% } else { %>
                         <div class="dropdown">
                             <ul>
@@ -72,9 +76,11 @@
                             </ul>
                         </div>
                     </li>
-                    <% } %> <% if (lastVisit) { %><span class="cookie-text-span"
-                        >Last Login:<%= lastVisit %></span
-                    >
+                    <% } %>
+
+                    <!-- if last visit -->
+                    <% if (lastVisit) { %>
+                    <span class="cookie-text-span">Last Login:<%= lastVisit %></span>
                     <% } else { %>
                     <span class="cookie-text-span"> visit.</span
                     ><% } %> <% } else { %>
@@ -108,27 +114,27 @@
                 </ul>
 
                 <div id="three-bars" class="menu-btn" style="position: relative">
-                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-bars" onclick="toggleModal()"></i>
                 </div>
-                <div id="menu-modal" class="d-md-none menu-modal-hide" onclick="toggleModal()">
-                    <ul id="menu-list" style="color: white">
-                        <li class="cursor-pointer">
+                <div id="menu-modal" class="d-md-none menu-modal-hide">
+                    <ul id="menu-list" style="color: white" class="menu-modal-hide">
+                        <li class="cursor-pointer" onclick="toggleModal()">
                             <a href="/home">Home</a>
                         </li>
                         <% if(userName) { %>
-                        <li class="cursor-pointer">
-                            <a href="#">Welcome, <%= userName %>.</a>
+                        <li class="cursor-pointer" onclick="toggleModal()">
+                            <a href="#" onclick="toggleModal()">Welcome, <%= userName %>.</a>
                             <% if(role == "Recruiter" || role == "recruiter") { %>
                             <div class="dropdown">
                                 <ul>
                                     <li class="hover-mouse-pointer">
-                                        <a href="/create-new-job">Post New Job</a>
+                                        <a href="/create-new-job" onclick="toggleModal()">Post New Job</a>
+                                    </li>
+                                    <li class="hover-mouse-pointer" onclick="toggleModal()">
+                                        <a href="/applicants" onclick="toggleModal()">View Applicants</a>
                                     </li>
                                     <li class="hover-mouse-pointer">
-                                        <a href="/applicants">View Applicants</a>
-                                    </li>
-                                    <li class="hover-mouse-pointer">
-                                        <a href="/logout">Logout</a>
+                                        <a href="/logout" onclick="toggleModal()">Logout</a>
                                     </li>
                                 </ul>
                             </div>

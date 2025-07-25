@@ -569,6 +569,7 @@ body {
     color: yellowgreen;
     font-weight: bold;
     font-size: 20px;
+    height: 60px;
 }
 .skills {
     display: flex;
@@ -577,6 +578,7 @@ body {
     color: rgb(41, 161, 236);
     border: rgb(41, 161, 236);
     border-radius: 3px;
+    height: 126px;
 }
 .skill {
     display: inline-block;
@@ -584,6 +586,7 @@ body {
     border: 2px solid rgb(41, 161, 236);
     border-radius: 4px;
     padding: 3px 5px;
+    height: 32px;
 }
 .skill:hover {
     background-color: rgb(41, 161, 236);

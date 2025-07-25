@@ -1,36 +1,42 @@
+function toggleModal() {
+    let modal = document.getElementById("menu-list");
+    if (modal.classList.contains("menu-modal-hide")) modal.classList.remove("menu-modal-hide");
+    else modal.classList.add("menu-modal-hide");
+}
+
 function openModal(button) {
-    var modal = button.closest(".card").nextElementSibling;
+    let modal = button.closest(".card").nextElementSibling;
     modal.classList.add("open-profile-popup");
-    var overlay = document.getElementsByClassName("overlay");
+    let overlay = document.getElementsByClassName("overlay");
     overlay[0].classList.remove("hidden");
 }
 
 function closeModal(button) {
-    var modal = button.closest(".profile-popup");
+    let modal = button.closest(".profile-popup");
     modal.classList.remove("open-profile-popup");
-    var overlay = document.getElementsByClassName("overlay");
+    let overlay = document.getElementsByClassName("overlay");
     overlay[0].classList.add("hidden");
 }
 
 function openApplyModal(button) {
-    var modal = button.nextElementSibling;
+    let modal = button.nextElementSibling;
     modal.classList.add("open-profile-popup");
-    var overlay = document.getElementsByClassName("overlay");
+    let overlay = document.getElementsByClassName("overlay");
     overlay[0].classList.remove("hidden");
 }
 
 function closeApplyModal(button) {
-    var modal = button.closest(".profile-popup");
+    let modal = button.closest(".profile-popup");
     modal.classList.remove("open-profile-popup");
-    var overlay = document.getElementsByClassName("overlay");
+    let overlay = document.getElementsByClassName("overlay");
     overlay[0].classList.add("hidden");
 }
 
 window.onclick = function (event) {
-    var modal = button.closest(".card").nextElementSibling;
+    let modal = button.closest(".card").nextElementSibling;
     if (event.target == modal) {
         modal.classList.remove("open-profile-popup");
-        var overlay = document.getElementsByClassName("overlay");
+        let overlay = document.getElementsByClassName("overlay");
         overlay[0].classList.add("hidden");
     }
 };
